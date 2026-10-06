@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Beautiful Girl ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #ffb6c9 0%, #8f1647 35%, #210013 100%);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Background glow */
+body::before{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#ff4f81;
+    filter:blur(130px);
+    opacity:.35;
+    top:-150px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#ff003c;
+    filter:blur(140px);
+    opacity:.25;
+    bottom:-150px;
+    right:-100px;
+    z-index:-1;
+}
+
+/* Music button */
+.music-btn{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:1000;
+    border:none;
+    background:rgba(255,255,255,.18);
+    color:white;
+    backdrop-filter:blur(10px);
+    padding:11px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+/* Main */
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.small{
+    font-size:14px;
+    letter-spacing:4px;
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(42px,9vw,85px);
+    line-height:1;
+    text-shadow:0 0 30px rgba(255,80,130,.7);
+}
+
+.hero h1 span{
+    color:#ffb6c9;
+}
+
+.hero p{
+    margin-top:25px;
+    max-width:550px;
+    line-height:1.8;
+    font-size:17px;
+    opacity:.9;
+}
+
+.start{
+    margin-top:35px;
+    padding:15px 30px;
+    border:none;
+    border-radius:40px;
+    background:#fff;
+    color:#9d174d;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.start:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* Sections */
+.section{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 10px;
+}
+
+.card{
+    width:100%;
+    max-width:700px;
+    padding:45px 30px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:30px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.number{
+    font-size:13px;
+    letter-spacing:4px;
+    color:#ffc1d5;
+    margin-bottom:20px;
+}
+
+.card h2{
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.card p{
+    font-size:17px;
+    line-height:1.9;
+    opacity:.92;
+}
+
+/* Cute chat */
+.chat{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.message{
+    padding:13px 18px;
+    border-radius:20px;
+    max-width:80%;
+    font-size:15px;
+}
+
+.her{
+    background:rgba(255,255,255,.18);
+    align-self:flex-start;
+    border-bottom-left-radius:5px;
+}
+
+.me{
+    background:#ff4d7d;
+    align-self:flex-end;
+    border-bottom-right-radius:5px;
+}
+
+/* Rose */
+.rose{
+    font-size:85px;
+    margin:25px 0;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(-3deg)}
+    50%{transform:translateY(-12px) rotate(3deg)}
+}
+
+/* Promise */
+.promise{
+    font-family:Georgia,serif;
+    font-size:25px;
+    line-height:1.7;
+    color:#ffe4ec;
+}
+
+/* Final */
+.final{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final h2{
+    font-family:Georgia,serif;
+    font-size:clamp(40px,8vw,70px);
+}
+
+.final p{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.yes{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff416c;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 10px 40px rgba(255,65,108,.4);
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    pointer-events:none;
+    animation:rise linear forwards;
+    z-index:0;
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Rose petals */
+.petal{
+    position:fixed;
+    top:-30px;
+    pointer-events:none;
+    z-index:0;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(600deg);
+        opacity:.2;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:50px 15px;
+    }
+
+    .hero{
+        min-height:95vh;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .card{
+        padding:35px 20px;
+        border-radius:25px;
+    }
+
+    .card h2{
+        font-size:31px;
+    }
+
+    .card p{
+        font-size:15px;
+    }
+
+    .promise{
+        font-size:20px;
+    }
+
+    .message{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="song" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+    🎵 Play
+</button>
+
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="small">A LITTLE LOVE STORY</div>
+
+        <h1>
+            Hey <span>Snoor</span> ❤️
+        </h1>
+
+        <p>
+            Kuch log life mein bas aa jaate hain...
+            aur phir dheere-dheere wahi person
+            tumhari favourite habit ban jaata hai.
+        </p>
+
+        <button class="start" onclick="startLove()">
+            Open My Heart 🌹
+        </button>
+
+    </section>
+
+
+    <!-- SECTION 1 -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">01 — THE GIRL</div>
+
+            <div class="rose">🌹</div>
+
+            <h2>
+                Tumhari smile ka kya karun?
+            </h2>
+
+            <p>
+                Tum jab hasta ho na,
+                tab genuinely lagta hai ki
+                duniya thodi aur achhi hai.
+                <br><br>
+                Aur haan...
+                tumhare cute nakhre alag hi level ke hain.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 2 -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">02 — OUR LITTLE FIGHTS</div>
+
+            <h2>
+                Thoda gussa...
+                thode nakhre...
+            </h2>
+
+            <p>
+                Kabhi tum naraz,
+                kabhi main manaane wala.
+                <br><br>
+                Kabhi meri galti,
+                kabhi tumhari...
+                aur kabhi dono ki.
+                😌
+                <br><br>
+                But end mein ek hi rule —
+                baat band nahi karni.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHAT -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">03 — OUR CHAT</div>
+
+            <h2>
+                Ek normal conversation...
+            </h2>
+
+            <div class="chat">
+
+                <div class="message her">
+                    Tum mujhe itna tease kyun karte ho?
+                </div>
+
+                <div class="message me">
+                    Kyunki tumhara reaction dekhna funny hai. 😂
+                </div>
+
+                <div class="message her">
+                    Achhaaa?
+                </div>
+
+                <div class="message me">
+                    Haan... but secretly cute bhi. ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 4 -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">04 — IF I COULD</div>
+
+            <div class="rose">🌹</div>
+
+            <h2>
+                Agar tum mere saamne hoti...
+            </h2>
+
+            <p>
+                Toh shayad main pehle kuch bol hi nahi pata.
+                <br><br>
+                Thoda shy hoon na...
+                😶
+                <br><br>
+                Bas ek rose deta,
+                smile karta,
+                aur bolta —
+            </p>
+
+            <div class="promise">
+                "Mere saath aise hi rehna."
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 5 -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">05 — STAY CLOSE</div>
+
+            <h2>
+                Door ho sakti ho...
+            </h2>
+
+            <p>
+                Lekin mere liye distance ka matlab
+                kabhi ye nahi raha ki tum door ho.
+                <br><br>
+                Calls, texts, random conversations,
+                choti-choti fights,
+                aur woh stupid si hasi...
+                <br><br>
+                Ye sab milke hi toh
+                <b>hum</b> bante hain.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 6 -->
+    <section class="section">
+
+        <div class="card">
+
+            <div class="number">06 — MY FAVORITE THING</div>
+
+            <h2>
+                Tumhe happy dekhna.
+            </h2>
+
+            <p>
+                Main perfect nahi hoon.
+                <br><br>
+                Kabhi stupid mistakes karunga,
+                kabhi tumhe irritate karunga,
+                kabhi tum mujhse gussa hogi.
+                <br><br>
+                But ek cheez genuinely chahta hoon —
+                <br><br>
+
+                <b>
+                tumhari smile roz dekhna.
+                </b>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final">
+
+        <div>
+
+            <div class="rose">🌹</div>
+
+            <h2>
+                Will You Stay<br>
+                With Me?
+            </h2>
+
+            <p>
+                Aaj ke liye nahi...
+                <br>
+                thoda aur long-term soch raha hoon. ❤️
+            </p>
+
+            <button class="yes" onclick="yesClicked()">
+                YES ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+const song = document.getElementById("song");
+const musicBtn = document.getElementById("musicBtn");
+
+function startLove(){
+
+    song.play().catch(()=>{});
+
+    musicBtn.innerHTML = "⏸ Pause";
+
+    document.querySelector(".section").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function toggleMusic(){
+
+    if(song.paused){
+
+        song.play();
+
+        musicBtn.innerHTML = "⏸ Pause";
+
+    }else{
+
+        song.pause();
+
+        musicBtn.innerHTML = "🎵 Play";
+
+    }
+}
+
+
+/* Hearts */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className="heart";
+
+    const hearts=["❤️","💕","💗","💖","💘"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+    heart.style.fontSize =
+        (15+Math.random()*18)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+setInterval(createHeart,900);
+
+
+/* Rose petals */
+
+function createPetal(){
+
+    const petal=document.createElement("div");
+
+    petal.className="petal";
+
+    petal.innerHTML="🌸";
+
+    petal.style.left=Math.random()*100+"vw";
+
+    petal.style.animationDuration=
+        (5+Math.random()*5)+"s";
+
+    petal.style.fontSize=
+        (12+Math.random()*15)+"px";
+
+    document.body.appendChild(petal);
+
+    setTimeout(()=>{
+        petal.remove();
+    },10000);
+}
+
+setInterval(createPetal,1800);
+
+
+/* Final button */
+
+function yesClicked(){
+
+    for(let i=0;i<35;i++){
+
+        setTimeout(()=>{
+
+            createHeart();
+
+        },i*80);
+
+    }
+
+    alert("Then it's settled... ❤️🌹");
+
+}
+
+</script>
+
+</body>
+</html>
